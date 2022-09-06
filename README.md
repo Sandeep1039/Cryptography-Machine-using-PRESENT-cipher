@@ -6,6 +6,7 @@ Lightweight Block cipher can provide adequate security with low power consumptio
 The present module is a kind of Substitution Permutation (SP) network consisting of 31 rounds with block length being 64 bits supporting key length 80 bit. 
 The top module of PRESENT algorithm that comprises of clock, k_load to initiate the process of data encryption, d-load, key input which is 80 bit in size. 
 The size of the input fed is din to be 64 bits. 
+
 ![image](https://user-images.githubusercontent.com/65500415/188557092-86a27ce0-fe43-4d84-9652-5390c60c416d.png)
 
 The hardware architecture of PRESENT encryption is in figure. It uses 64 bit of inputs, 64 bit of outputs and 80 bit of key i.e. the key size used 80 bit. 
@@ -28,6 +29,7 @@ For sBoxLayer the current state b63 . . . b0 is considered as sixteen 4-bit word
 ![image](https://user-images.githubusercontent.com/65500415/188558666-078a977f-5b23-4edc-97b4-a8933f9eee9b.png)
 
 The key schedule. present can take keys of either 80 or 128 bits. However we focus on the version with 80-bit keys. The user-supplied key is stored in a key register K and represented as k79k78 . . . k0. At round i the 64-bit round key Ki = κ63κ62 . . . κ0 consists of the 64 leftmost bits of the current contents of register K. Thus at round i we have that: Ki = κ63κ62 . . . κ0 = k79k78 . . . k16. After extracting the round key Ki , the key register K = k79k78 . . . k0 is updated as follows
+
 ![image](https://user-images.githubusercontent.com/65500415/188560332-29f5af9f-3982-4182-b27d-694597807696.png)
 
 
